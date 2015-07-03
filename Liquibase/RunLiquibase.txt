@@ -1,0 +1,2 @@
+#Run the ChangeSet
+java -jar liquibase.jar --driver=com.mysql.jdbc.Driver --classpath=mysql-connector-java-5.0.8-bin.jar --changeLogFile=databaseChangeLog.xml --url="jdbc:mysql://example/database" --username=user --password=pass migrate

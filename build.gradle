@@ -1,0 +1,17 @@
+apply plugin:'java'
+apply plugin:'idea'
+apply plugin:'eclipse'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+dependencies {
+  compile 'org.hibernate:hibernate-core:[4.3.1.Final, 4.3.10.Final)'
+  compile 'mysql:mysql-connector-java:5.1.6'
+  testCompile 'junit:junit:4.12'
+}
+
