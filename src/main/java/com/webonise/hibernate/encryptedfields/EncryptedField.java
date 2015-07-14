@@ -41,7 +41,7 @@ public class EncryptedField implements UserType {
 
     @Override
     public Object nullSafeGet(ResultSet rs, String[] names, SessionImplementor session, Object owner) throws HibernateException, SQLException {
-        return anyCipher.decrypt(rs.getBytes(names[0]));
+        return anyCipher.decrypt(rs.getString(names[0]).getBytes());
     }
 
     @Override
@@ -49,7 +49,7 @@ public class EncryptedField implements UserType {
         if (value == null) {
             st.setNull(index, Types.VARBINARY);
         } else {
-            st.setBytes(index, anyCipher.encrypt(value));
+            st.setString(index, new String(anyCipher.encrypt(value)));
         }
     }
 

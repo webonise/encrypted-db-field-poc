@@ -15,8 +15,8 @@ public class JDBC_Connection {
         ProjectProperties projectProperties = new ProjectProperties();
 
         Properties connectionProps = new Properties();
-        connectionProps.put("user", projectProperties.readProperty("mysql.user"));
-        connectionProps.put("password", projectProperties.readProperty("mysql.password"));
-        return DriverManager.getConnection(projectProperties.readProperty("mysql.url"), connectionProps);
+        connectionProps.put("user", projectProperties.readProperty("database.user"));
+        connectionProps.put("password", projectProperties.readProperty("database.password"));
+        return DriverManager.getConnection(projectProperties.readProperty("database.url"), connectionProps);
     }
 }
