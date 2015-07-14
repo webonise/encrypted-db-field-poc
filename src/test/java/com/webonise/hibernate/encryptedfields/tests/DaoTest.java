@@ -95,7 +95,7 @@ public class DaoTest {
         TestEntity testEntity2 = (TestEntity) dao.findObjectById(TestEntity.class, testEntity1.getId());
 
         //Compare not same object
-        assertNotEquals(testEntity1, testEntity2);
+        assertNotSame(testEntity1, testEntity2);
 
         //Compare fields
         assertEquals(testEntity2.getField(), testEntity1.getField());
